@@ -7,16 +7,18 @@ class Main {
         for(int i = 0; i < n; i++){
             arr[i] = sc.nextInt();
         }
+        int windowSum = 0;
         int k = 3;
-        int WindowSum = 0;
-        for(int i = 0; i < k; i++){
-            WindowSum += arr[i];
+        for (int i = 0; i < k; i++) {
+            windowSum += arr[i];
         }
-        int MaxSum = WindowSum;
-        for(int i = k; i < n; i++){
-            WindowSum = WindowSum - arr[i-k] + arr[i];
-            MaxSum = Math.max(WindowSum, MaxSum);
+
+        int maxSum = windowSum;
+
+        for (int i = k; i < arr.length; i++) {
+            windowSum += arr[i] - arr[i - k];
+            maxSum = Math.max(maxSum, windowSum);
         }
-        System.out.print(MaxSum);
+        System.out.print(maxSum);
     }
 }
