@@ -1,3 +1,5 @@
+// Sliding Window Fixed Size Pattern
+
 import java.util.*;
 class Main {
     public static void main(String[] args) {
@@ -22,3 +24,13 @@ class Main {
         System.out.print(maxSum);
     }
 }
+
+// Time Complexity - O(n)
+
+// Space Complexity - O(1)
+
+//First calculate the sum of the first `k` elements.
+//Then slide the window one position at a time:
+//- Remove the element leaving the window.
+//- Add the new element entering the window.
+//- Compare the current window sum with the maximum sum.
